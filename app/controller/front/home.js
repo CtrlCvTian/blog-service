@@ -14,6 +14,17 @@ class HomeController extends Controller {
     const result = await ctx.service.front.home.getActicleData();
     ctx.body = result;
   }
+  async getActicleDetail () {
+    const { ctx } = this;
+    const id = this.ctx.params.id;
+    const result = await ctx.service.front.home.getActicleDetail(id);
+    ctx.body = result;
+  }
+  async getTypeInfo () {
+    const { ctx } = this;
+    const result = await ctx.service.front.home.getTypeInfo();
+    ctx.body = result;
+  }
 }
 
 module.exports = HomeController;
